@@ -1,0 +1,17 @@
+{
+    // "files.eol": "\n",
+    "css.validate": false,
+    "scss.validate": false,
+    "editor.renderWhitespace": "boundary",
+    "editor.tabSize": 2,
+    "editor.rulers": [120],
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.codeActionsOnSave": {
+      // "source.organizeImports": true,
+      "source.fixAll.eslint": true
+    },
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single",
+    "eslint.format.enable": true
+}

@@ -1,0 +1,17 @@
+import HttpService from '../../../commons/helpers/http-request';
+
+async function {{camelCase name}}Service(email: string, abortController: any = null) {
+  const requestBody = `mutation {
+  }`;
+
+  try {
+    const response = await HttpService(abortController).graph()({ query: requestBody });
+    const data = await response.json();
+    return data.exampleData;
+  } catch (error: any) {
+    const err = error?.response ? error.response?.data?.exampleData : error;
+    return Promise.reject(err);
+  }
+}
+
+export default {{camelCase name}}Service;

@@ -1,0 +1,71 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:react/recommended",
+    "airbnb"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "React": "writable"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "no-use-before-define": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "no-bitwise": "off",
+    "radix": "off",
+    // starting from here to below are rules to warn error by airbnb, next will be removed
+    "max-len": 1,
+    "no-plusplus": "off",
+    "lines-between-class-members": 1,
+    "no-unused-vars": 1,
+    "quotes": [1, "single"],
+    "comma-dangle": 0,
+    "no-trailing-spaces": 1,
+    "eol-last": [1, "always"],
+    "semi": [1, "always"],
+    "react/self-closing-comp": 1,
+    "import/newline-after-import": 1,
+    "import/order": 1,
+    "eqeqeq": 1,
+    "linebreak-style": 0,
+    "jsx-a11y/no-access-key": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+   ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "babel-module": {}
+    },
+    "import/core-modules": ["rxjs/operators"]
+  }
+}

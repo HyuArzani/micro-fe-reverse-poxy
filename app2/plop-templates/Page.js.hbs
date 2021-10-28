@@ -1,0 +1,27 @@
+import React from 'react';
+import { withTranslation, TFunction } from 'react-i18next';
+// import { Text } from 'w6-material-ui';
+import {{pascalCase name}} from './components/{{pascalCase name}}';
+import use{{pascalCase name}} from './hooks/use{{pascalCase name}}';
+
+function {{pascalCase name}}Page({ t }: Props) {
+  const { data } = use{{pascalCase name}}()
+  return (
+    <div className="p-5">
+      {/* <Text
+        type="h3-500"
+        color="text-navy"
+        align="center"
+        text="Welcome {{pascalCase name}} Page"
+        tag="div"
+      /> */}
+      <{{pascalCase name}} t={t} />
+    </div>
+  );
+}
+
+type Props = {
+    t: TFunction,
+}
+
+export default withTranslation(['{{kebabCase name}}', 'common'])({{pascalCase name}}Page)

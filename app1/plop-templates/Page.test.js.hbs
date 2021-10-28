@@ -1,0 +1,26 @@
+import React from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
+import renderer from 'react-test-renderer';
+import { QueryClient, QueryClientProvider } from "react-query";
+import {{pascalCase name}}Page from '../index';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  },
+});
+
+describe('{{pascalCase name}}Page snapshots', () => {
+  it('Perform snapshots test {{pascalCase name}}Page', () => {
+    const inputDefaultTree = renderer.create(
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <ForgotPasswordPage />
+        </Router>
+      </QueryClientProvider>
+    );
+    expect(inputDefaultTree).toMatchSnapshot();
+  });
+});

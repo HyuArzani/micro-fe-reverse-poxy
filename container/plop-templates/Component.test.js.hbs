@@ -1,0 +1,17 @@
+import React from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
+import renderer from 'react-test-renderer';
+import {{pascalCase name}} from '../components/{{pascalCase name}}';
+
+describe('{{pascalCase name}} snapshots', () => {
+  it('Perform snapshots test {{pascalCase name}}', () => {
+    const inputDefaultTree = renderer.create(
+      <>
+        <Router>
+          <ForgotPassword />
+        </Router>
+      </>
+    );
+    expect(inputDefaultTree).toMatchSnapshot();
+  });
+});

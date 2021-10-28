@@ -1,0 +1,13 @@
+import { commons } from '../../../commons/helpers';
+import {{camelCase name}}Service from '../services/{{camelCase name}}.service';
+import { PromiseWithCancel } from '../../../commons/helpers/http-request';
+
+export const exampleRequest = ({ email, cancelSignal }: any) => {
+  const cancelRequest = cancelSignal || commons.generateCancelSignal();
+  const promise = {{camelCase name}}Service(email, cancelRequest.controller);
+  (promise as PromiseWithCancel<any>).cancel = () => {
+    cancelRequest.controller.abort();
+  };
+
+  return promise
+}
