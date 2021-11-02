@@ -24,4 +24,4 @@ NGinx is being used to make a reverse proxy, connecting every single page as onl
 
 ### Run Individual App
 
-The folder `container` is the default app of our project, so when you run the containers using `docker-compose up` command and access `http://localhost:3001` you will see the main page or our project with links for all other app, other app also can run individually
+The folder `dashboard` is the default app of our project, so when you run the containers using `docker-compose up` command and access `http://localhost` you will see the main page or our project with links for all other app, other app also can run individually
