@@ -1,41 +1,34 @@
-version: '2'
 
+version: "3.7"
 services:
-  micro-frontend-app1:
-    container_name: micro-frontend-app1
-    build: app1
-    environment:
-      - NODE_ENV=production
-      - PORT=80
+  order:
+    container_name: order
     ports:
-      - "3001:9015"
+      - "8080:80"
+    build:
+      context: ./order
 
-  micro-frontend-app2:
-    container_name: micro-frontend-app2
-    build: app2
-    environment:
-      - NODE_ENV=production
-      - PORT=80
+  trip:
+    container_name: trip
     ports:
-      - "3002:9015"
-  
-  micro-frontend-container:
-    container_name: micro-frontend-container
-    build: container
-    environment:
-      - NODE_ENV=production
-      - PORT=80
-    ports:
-      - "3003:9015"
+      - "8081:80"
+    build:
+      context: ./trip
 
-  micro-frontend-nginx:
-    container_name: micro-frontend-nginx
-    build: nginx
-    volumes:
-      - ./assets:/var/www
+  dashboard:
+    container_name: dashboard
     ports:
-      - "3005:80"
+      - "8082:80"
+    build:
+      context: ./dashboard
+
+  orchestrator:
+    container_name: orchestrator
+    ports:
+      - 80:80
     depends_on:
-      - micro-frontend-app1
-      - micro-frontend-app2
-      - micro-frontend-container
+      - order
+      - trip
+      - dashboard
+    build:
+      context: ./nginx
