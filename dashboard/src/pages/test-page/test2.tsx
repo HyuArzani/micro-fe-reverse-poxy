@@ -10,7 +10,7 @@ function TestPage2() {
   return (
     <div style={{ padding: 20 }}>
       <div>ini page 2</div>
-      <Link to="/trip">Kembali page 1</Link>
+      <Link to="/">Kembali page 1</Link>
     </div>
   );
 }

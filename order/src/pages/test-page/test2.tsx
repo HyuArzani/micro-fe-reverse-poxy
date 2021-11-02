@@ -6,11 +6,16 @@ function TestPage2() {
   const { data } = useTest2();
 
   console.log('dataa2 : ', data);
+  const redirectOrder = () => {
+    window.location.assign('http://localhost/order');
+  };
 
   return (
-    <div style={{ padding: 20 }}>
-      <div>ini page 2</div>
-      <Link to="/order">Kembali page 1</Link>
+    <div style={{ padding: 20, backgroundColor: 'red' }}>
+      <div>ini order</div>
+      <div style={{ marginTop: 20 }}>
+        <button type="button" onClick={redirectOrder}>Ke Order</button>
+      </div>
     </div>
   );
 }
